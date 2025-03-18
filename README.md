@@ -22,12 +22,12 @@ _You should also check out the GopherCon2023 talk "Build Your Own Distributed Sy
 ## Reading and writing keys
 The reference implementation is a very simple in-memory key-value store. You can set a key by sending a request to the HTTP bind address (which defaults to `localhost:11000`):
 ```bash
-curl -XPOST localhost:11000/key -d '{"foo": "bar"}'
+curl -XPOST localhost:8100/key -d '{"foo": "bar"}'
 ```
 
 You can read the value for a key like so:
 ```bash
-curl -XGET localhost:11000/key/foo
+curl -XGET localhost:8100/key/foo
 ```
 
 ## Running raft-nginx

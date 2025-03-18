@@ -75,7 +75,7 @@ curl -XGET localhost:8300/key/user2
 ```
 
 ### Leader-forwarding
-Automatically forwarding requests to set keys to the current leader is not implemented. The client must always send requests to change a key to the leader or an error will be returned.
+可以通过nginx的原生能力，转发request到Leader节点，现在的nginx没做配置
 
 ## Production use of Raft
 For a production-grade example of using Hashicorp's Raft implementation, to replicate a SQLite database, check out [rqlite](https://github.com/rqlite/rqlite).

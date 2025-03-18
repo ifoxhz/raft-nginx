@@ -1,22 +1,23 @@
 
-======
-[![Circle CI](https://circleci.com/gh/otoolep/hraftd/tree/master.svg?style=svg)](https://circleci.com/gh/otoolep/hraftd/tree/master)
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/github/otoolep/hraftd?branch=master&svg=true)](https://ci.appveyor.com/project/otoolep/hraftd)
-[![Go Reference](https://pkg.go.dev/badge/github.com/otoolep/hraftd.svg)](https://pkg.go.dev/github.com/otoolep/hraftd)
-[![Go Report Card](https://goreportcard.com/badge/github.com/otoolep/hraftd)](https://goreportcard.com/report/github.com/otoolep/hraftd)
-
 =======
 # raft-nginx
-raft-nginx 是利用hashicorp的raft 协议，实现一个边缘计算nginx网关的集群框架
+raft-nginx 是利用hashicorp的raft 协议，实现一个边缘计算nginx网关的集群框架.
+Leader nginx支持边缘节点的读写操作，Follower节点的仅支持读操作
+里面内置了一个hraftd类似的kv-store演示相关功能，但是重新组织了代码结构，可以通过自己的FSM 实现来完成新的后端服务接入，比如一个rocksdb.
+
+待完善的点：
+
+1.  Apply的log, 可能重新被写入后端服务；
+2.  snapshot记录最后的log, 新的选举，不会重新写入已经apply的log到后端；
+
+
+参考了[hraftd](https://github.com/otoolep/hraftd)
 
 _For background on this project check out this [blog post](http://www.philipotoole.com/building-a-distributed-key-value-store-using-raft/)._
 
 _You should also check out the GopherCon2023 talk "Build Your Own Distributed System Using Go" ([video](https://www.youtube.com/watch?v=8XbxQ1Epi5w), [slides](https://www.philipotoole.com/gophercon2023)), which explains step-by-step how to use the Hashicorp Raft library._
 
-## What is hraftd?
-hraftd is a reference example use of the [Hashicorp Raft implementation](https://github.com/hashicorp/raft). [Raft](https://raft.github.io/) is a _distributed consensus protocol_, meaning its purpose is to ensure that a set of nodes -- a cluster -- agree on the state of some arbitrary state machine, even when nodes are vulnerable to failure and network partitions. Distributed consensus is a fundamental concept when it comes to building fault-tolerant systems.
 
-A simple example system like hraftd makes it easy to study the Raft consensus protocol in general, and Hashicorp's Raft implementation in particular. It can be run on Linux, macOS, and Windows.
 
 ## Reading and writing keys
 The reference implementation is a very simple in-memory key-value store. You can set a key by sending a request to the HTTP bind address (which defaults to `localhost:11000`):
@@ -29,24 +30,22 @@ You can read the value for a key like so:
 curl -XGET localhost:11000/key/foo
 ```
 
-## Running hraftd
-*Building hraftd requires Go 1.20 or later. [gvm](https://github.com/moovweb/gvm) is a great tool for installing and managing your versions of Go.*
+## Running raft-nginx
+*Building hraftd requires Go 1.20 or later.*
 
 Starting and running a hraftd cluster is easy. Download and build hraftd like so:
 ```bash
 mkdir work # or any directory you like
 cd work
 export GOPATH=$PWD
-mkdir -p src/github.com/otoolep
-cd src/github.com/otoolep/
-git clone git@github.com:otoolep/hraftd.git
-cd hraftd
+git clone git@github.com:ifoxhz/raft-nginx.git
+cd raft-nginx
 go install
 ```
 
 Run your first hraftd node like so:
 ```bash
-$GOPATH/bin/hraftd -id node0 ~/node0
+docker build -t raft-nginx:1.0.0 .
 ```
 
 You can now set a key and read its value back:

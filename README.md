@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 hraftd
 ======
 [![Circle CI](https://circleci.com/gh/otoolep/hraftd/tree/master.svg?style=svg)](https://circleci.com/gh/otoolep/hraftd/tree/master)
@@ -95,3 +96,7 @@ Automatically forwarding requests to set keys to the current leader is not imple
 
 ## Production use of Raft
 For a production-grade example of using Hashicorp's Raft implementation, to replicate a SQLite database, check out [rqlite](https://github.com/rqlite/rqlite).
+=======
+# raft-nginx
+raft-nginx 是利用hashicorp的raft 协议，实现一个边缘计算nginx网关的集群框架
+>>>>>>> 47faba606667145bb8d3bbfd3b55ec2527786534

@@ -5,14 +5,18 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"os/signal"
 
-	httpd "github.com/otoolep/hraftd/http"
-	"github.com/otoolep/hraftd/store"
+	httpd "github.com/ifoxhz/raft-nginx/http"
+	"github.com/ifoxhz/raft-nginx/raftnode"
+	"github.com/ifoxhz/raft-nginx/config"
+	"github.com/ifoxhz/raft-nginx/helper"
+	"github.com/ifoxhz/raft-nginx/store"
 )
+
+var log = helper.Logger
 
 // Command line defaults
 const (
@@ -26,6 +30,8 @@ var httpAddr string
 var raftAddr string
 var joinAddr string
 var nodeID string
+var configFile string
+
 
 func init() {
 	flag.BoolVar(&inmem, "inmem", false, "Use in-memory storage for Raft")
@@ -33,6 +39,7 @@ func init() {
 	flag.StringVar(&raftAddr, "raddr", DefaultRaftAddr, "Set Raft bind address")
 	flag.StringVar(&joinAddr, "join", "", "Set join address, if any")
 	flag.StringVar(&nodeID, "id", "", "Node ID. If not set, same as Raft bind address")
+	flag.StringVar(&configFile, "config", "", "Configuration file")
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage: %s [options] <raft-data-path> \n", os.Args[0])
 		flag.PrintDefaults()
@@ -41,50 +48,83 @@ func init() {
 
 func main() {
 	flag.Parse()
-	if flag.NArg() == 0 {
-		fmt.Fprintf(os.Stderr, "No Raft storage directory specified\n")
-		os.Exit(1)
+	
+	var rfstore *store.Store 
+	var fsm   *raftnode.RaftFsm
+	var raftNode *raftnode.RaftNode
+	
+
+	if configFile != "" {
+		config, err := config.LoadRaftConfig(configFile)
+		if (err != nil) {
+			log.Info("failed to open raft config: %s", err.Error())
+			return 	
+		}else{
+			log.Info("Raft configuration loaded  %+v", config) 	
+		}
+
+		rfstore = store.NewStore(false)
+		fsm   = raftnode.NewRaftFsm(rfstore)
+		raftNode = raftnode.New(fsm)
+		log.Info("new store created ", rfstore)
+		if err := raftNode.OpenWithcConfig(*config); err != nil {
+			log.Error("failed to open store: %s", err.Error())
+			os.Exit(-1)
+		}
+		if config.Nodes[0].Address != "" {
+			httpAddr = config.Nodes[0].Address
+		}
+
+	}else{
+			
+		if nodeID == "" {
+			nodeID = raftAddr
+		}
+
+		// Ensure Raft storage exists.
+		raftDir := flag.Arg(0)
+		if raftDir == "" {
+			log.Error("No Raft storage directory specified")
+			os.Exit(-2)
+		}
+		if err := os.MkdirAll(raftDir, 0700); err != nil {
+			log.Error("failed to create path for Raft storage: %s", err.Error())
+			os.Exit(-2)
+		}
+
+		rfstore = store.NewStore(inmem)
+		fsm   = raftnode.NewRaftFsm(rfstore)
+		raftNode = raftnode.New(fsm)
+
+		raftNode.RaftDir = raftDir
+		raftNode.RaftBind = raftAddr
+		if err := raftNode.Open(joinAddr == "", nodeID); err != nil {
+			log.Error("failed to open store: %s", err.Error())
+			os.Exit(-2)
+		}
 	}
 
-	if nodeID == "" {
-		nodeID = raftAddr
-	}
 
-	// Ensure Raft storage exists.
-	raftDir := flag.Arg(0)
-	if raftDir == "" {
-		log.Fatalln("No Raft storage directory specified")
-	}
-	if err := os.MkdirAll(raftDir, 0700); err != nil {
-		log.Fatalf("failed to create path for Raft storage: %s", err.Error())
-	}
-
-	s := store.New(inmem)
-	s.RaftDir = raftDir
-	s.RaftBind = raftAddr
-	if err := s.Open(joinAddr == "", nodeID); err != nil {
-		log.Fatalf("failed to open store: %s", err.Error())
-	}
-
-	h := httpd.New(httpAddr, s)
+	h := httpd.New(httpAddr,rfstore,raftNode)
 	if err := h.Start(); err != nil {
-		log.Fatalf("failed to start HTTP service: %s", err.Error())
+		log.Error("failed to start HTTP service: %s", err.Error())
+		os.Exit(-2)
 	}
 
 	// If join was specified, make the join request.
 	if joinAddr != "" {
 		if err := join(joinAddr, raftAddr, nodeID); err != nil {
-			log.Fatalf("failed to join node at %s: %s", joinAddr, err.Error())
+			log.Info("failed to join node at %s: %s", joinAddr, err.Error())
 		}
 	}
 
 	// We're up and running!
-	log.Printf("hraftd started successfully, listening on http://%s", httpAddr)
+	log.Info("hraftd started successfully, listening on http://%s", httpAddr)
 
 	terminate := make(chan os.Signal, 1)
 	signal.Notify(terminate, os.Interrupt)
 	<-terminate
-	log.Println("hraftd exiting")
+	log.Info("hraftd exiting")
 }
 
 func join(joinAddr, raftAddr, nodeID string) error {

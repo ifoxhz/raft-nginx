@@ -1,0 +1,30 @@
+{
+  "cluster_name": "etsme-raft-cluster",
+  "nodes": [
+    {
+      "id": "node0",
+      "address": "127.0.0.1:10085",
+      "raft_bind": "127.0.0.1:10086"
+    }
+  ],
+  "raft_dir": "/home/etsme/node0",
+  "election_timeout_ms": 1500,
+  "heartbeat_interval_ms": 500,
+  "snapshot": {
+    "enabled": true,
+    "snapshot_interval_sec": 30,
+    "snapshot_threshold": 1000,
+    "retain_snapshots": 3
+  },
+  "log": {
+    "log_dir": "/var/raft/logs",
+    "trailing_logs": 10240
+  },
+  "transport": {
+    "type": "tcp",
+    "max_pool": 3,
+    "timeout_sec": 5
+  },
+  "bootstrap_expect": 3,
+  "single_node": true
+}

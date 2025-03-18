@@ -4,8 +4,8 @@
 *.so
 # executables
 
-hraftd
-**/hraftd
+raft-nginx
+**/raft-nginx
 
 # Folders
 _obj

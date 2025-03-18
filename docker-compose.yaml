@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+  raft-node0:
+    image: raft:1.0.0
+    ports:
+      - "8100:80"
+      - "8185:10085"
+    container_name: raft-node0
+    volumes:
+      - /home/etsme/node0:/data
+    stdin_open: true
+    tty: true
+    networks:
+      raft_network:
+        ipv4_address: 172.28.0.2
+      
+  raft-node1:
+    image: raft:1.0.0
+    container_name: raft-node1
+    ports:
+      - "8200:80"
+      - "8285:10085"
+    volumes:
+      - /home/etsme/node1:/data
+    stdin_open: true
+    tty: true
+    networks:
+      raft_network:
+        ipv4_address: 172.28.0.3
+
+networks:
+  raft_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

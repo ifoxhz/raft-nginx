@@ -1,10 +1,13 @@
-<<<<<<< HEAD
-hraftd
+
 ======
 [![Circle CI](https://circleci.com/gh/otoolep/hraftd/tree/master.svg?style=svg)](https://circleci.com/gh/otoolep/hraftd/tree/master)
 [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/otoolep/hraftd?branch=master&svg=true)](https://ci.appveyor.com/project/otoolep/hraftd)
 [![Go Reference](https://pkg.go.dev/badge/github.com/otoolep/hraftd.svg)](https://pkg.go.dev/github.com/otoolep/hraftd)
 [![Go Report Card](https://goreportcard.com/badge/github.com/otoolep/hraftd)](https://goreportcard.com/report/github.com/otoolep/hraftd)
+
+=======
+# raft-nginx
+raft-nginx 是利用hashicorp的raft 协议，实现一个边缘计算nginx网关的集群框架
 
 _For background on this project check out this [blog post](http://www.philipotoole.com/building-a-distributed-key-value-store-using-raft/)._
 
@@ -96,7 +99,5 @@ Automatically forwarding requests to set keys to the current leader is not imple
 
 ## Production use of Raft
 For a production-grade example of using Hashicorp's Raft implementation, to replicate a SQLite database, check out [rqlite](https://github.com/rqlite/rqlite).
-=======
-# raft-nginx
-raft-nginx 是利用hashicorp的raft 协议，实现一个边缘计算nginx网关的集群框架
->>>>>>> 47faba606667145bb8d3bbfd3b55ec2527786534
+
+

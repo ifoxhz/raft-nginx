@@ -9,6 +9,7 @@ Leader nginx支持边缘节点的读写操作，Follower节点的仅支持读操
 
 1.  Apply的log, 可能重新被写入后端服务；
 2.  snapshot记录最后的log, 新的选举，不会重新写入已经apply的log到后端；
+3.  该实现，很快就运行的很流程，核心的问题是在有状态的数据关联关系里面，实现snapshot,不被2问题所困扰，是关键所在，并且同时要保持不被新的leader replicated 所覆盖或者重写
 
 
 参考了[hraftd](https://github.com/otoolep/hraftd)

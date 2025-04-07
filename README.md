@@ -77,6 +77,6 @@ curl -XGET localhost:8300/key/user2
 可以通过nginx的原生能力，转发request到Leader节点，现在的nginx没做配置
 
 ## Production use of Raft
-For a production-grade example of using Hashicorp's Raft implementation, to replicate a SQLite database, check out [rqlite](https://github.com/rqlite/rqlite).
+学习是能获取更多的关键点 [rqlite](https://github.com/rqlite/rqlite).
 
 

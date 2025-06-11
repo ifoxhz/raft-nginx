@@ -154,6 +154,8 @@ func (s *Service) handleJoin(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+	w.WriteHeader(http.StatusOK)
+	return
 }
 
 func (s *Service) handleKeyRequest(w http.ResponseWriter, r *http.Request) {
@@ -264,6 +266,11 @@ func (s *Service) writeRaftState(content string) {
 var idx = 0
 func (s *Service) Set(key, value string) error {
 	
+	now := time.Now()
+	// milliseconds := now.UnixNano() 
+	tstr := fmt.Sprintf("APISet 时间%s", now.Format("2006-01-02 15:04:05.000"))
+	value = fmt.Sprintf("value:%s APISetNode %s-%s", value, s.raft.GetRaftNodeLocalId(), tstr)
+
 	c := &command{
 		Op:    "set",
 		Key:   key,
@@ -274,17 +281,18 @@ func (s *Service) Set(key, value string) error {
 		return err
 	}
 	idx++
+	log.Info("HTTP set key", "key", key, "time", value)
 	f := s.raft.Apply(b)
 
-	if idx % 3 == 0 {
-		time.Sleep(1 * time.Second) // 延迟一秒
-		log.Info("save snapshot log")
-		rs :=s.raft.GetRaft().Snapshot()
-		if rs.Error() != nil {
-			log.Info("snapshot error %s", rs.Error())
-		}
+	// if idx % 3 == 0 {
+	// 	time.Sleep(1 * time.Second) // 延迟一秒
+	// 	log.Info("save snapshot log")
+	// 	rs :=s.raft.GetRaft().Snapshot()
+	// 	if rs.Error() != nil {
+	// 		log.Info("snapshot error %s", rs.Error())
+	// 	}
 
-	}
+	// }
 	return f.(raft.ApplyFuture).Error()
 }
 

@@ -7,9 +7,9 @@
       "raft_bind": "127.0.0.1:10086"
     }
   ],
-  "raft_dir": "/home/etsme/node0",
-  "election_timeout_ms": 1500,
-  "heartbeat_interval_ms": 500,
+  "raft_dir": "./",
+  "election_timeout_ms": 60000,
+  "heartbeat_interval_ms": 15000,
   "snapshot": {
     "enabled": true,
     "snapshot_interval_sec": 30,

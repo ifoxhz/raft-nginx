@@ -126,9 +126,11 @@ func (s *RaftNode) OpenWithcConfig(configInstance config.RaftConfig) error {
 	s.RaftDir = configInstance.RaftDir
 	s.RaftBind = configInstance.Nodes[0].RaftBind
 
-	// Setup Raft configuration.
+	// Setup Raft configuration  from file config.json
 	config := raft.DefaultConfig()
 	config.LocalID = raft.ServerID(configInstance.Nodes[0].ID)
+	config.HeartbeatTimeout = time.Duration(configInstance.HeartbeatIntervalMs *1000*1000) // Convert ms to ns
+	config.ElectionTimeout  = time.Duration(configInstance.ElectionTimeoutMs *1000*1000) // Convert ms to ns
 
 	// Setup Raft communication.
 	addr, err := net.ResolveTCPAddr("tcp", s.RaftBind)
@@ -166,6 +168,7 @@ func (s *RaftNode) OpenWithcConfig(configInstance config.RaftConfig) error {
 	}
 
 	// Instantiate the Raft systems.
+	log.Info("init raft with config", "config", fmt.Sprintf("%+v", config))
 	ra, err := raft.NewRaft(config, s.fsm, logStore, stableStore, snapshots, transport)
 	if err != nil {
 		return fmt.Errorf("new raft: %s", err)
@@ -247,8 +250,8 @@ func (s *RaftNode) Join(nodeID, addr string) error {
 			}
 		}
 	}
-
-	f := s.raft.AddVoter(raft.ServerID(nodeID), raft.ServerAddress(addr), 0, 0)
+	log.Info("raft AddNonvoter ", "nodeID",nodeID, "addr", addr)
+	f := s.raft.AddNonvoter(raft.ServerID(nodeID), raft.ServerAddress(addr), 0, 0)
 	if f.Error() != nil {
 		log.Info("failed to add node %s at %s to cluster: %s", nodeID, addr, f.Error())
 		return f.Error()

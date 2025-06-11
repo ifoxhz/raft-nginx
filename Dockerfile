@@ -16,7 +16,7 @@ COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 
 
 # 指定工作目录
-COPY ./bin/hraftd /usr/local/bin/
+COPY ./bin/raft-nginx /usr/local/bin/
 
 #COPY ./hraftd-service /etc/init.d/hraftd-service
 

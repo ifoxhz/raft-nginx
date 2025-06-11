@@ -60,13 +60,17 @@ func main() {
 			log.Info("failed to open raft config: %s", err.Error())
 			return 	
 		}else{
-			log.Info("Raft configuration loaded  %+v", config) 	
+			log.Info("Raft configuration loaded:", fmt.Sprintf("%+v", config)) 	
 		}
 
 		rfstore = store.NewStore(false)
 		fsm   = raftnode.NewRaftFsm(rfstore)
 		raftNode = raftnode.New(fsm)
-		log.Info("new store created ", rfstore)
+
+		fsm.RaftNodeId = config.Nodes[0].ID
+	
+
+		log.Info("new store created ","rftstore", fsm.RaftNodeId)
 		if err := raftNode.OpenWithcConfig(*config); err != nil {
 			log.Error("failed to open store: %s", err.Error())
 			os.Exit(-1)
@@ -95,6 +99,10 @@ func main() {
 		rfstore = store.NewStore(inmem)
 		fsm   = raftnode.NewRaftFsm(rfstore)
 		raftNode = raftnode.New(fsm)
+
+		fsm.RaftNodeId = nodeID
+		log.Info("new store created ","rftstore", rfstore)
+		log.Info("raft node id","nodeId", nodeID, "fsmRaftNodeId", fsm.RaftNodeId)
 
 		raftNode.RaftDir = raftDir
 		raftNode.RaftBind = raftAddr

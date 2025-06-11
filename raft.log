@@ -226,3 +226,505 @@
 2025-03-14T18:21:58.500+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
 2025-03-14T18:21:58.508+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
 2025-03-14T18:22:08.822+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T10:31:54.136+0800 [ERROR] raft-node: No Raft storage directory specified
+2025-06-03T10:32:39.289+0800 [INFO]  raft-node: failed to open raft config: %s: EXTRA_VALUE_AT_END="open /home/etsme/node: no such file or directory"
+2025-06-03T10:33:08.590+0800 [INFO]  raft-node: failed to open raft config: %s: EXTRA_VALUE_AT_END="read /home/etsme/node0: is a directory"
+2025-06-03T10:33:19.545+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 0.0.0.0:10085 172.28.0.2:10086}] /data 1500 500 {true 30 2 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T10:33:19.547+0800 [INFO]  raft-node: new store created : EXTRA_VALUE_AT_END="&{false {0 0} map[] 0 0}"
+2025-06-03T10:33:19.550+0800 [INFO]  raft-node.RaftNode: raft error NewTCPTransport: %v: EXTRA_VALUE_AT_END=172.28.0.2:10086
+2025-06-03T10:33:19.551+0800 [ERROR] raft-node: failed to open store: %s: EXTRA_VALUE_AT_END="listen tcp 172.28.0.2:10086: bind: cannot assign requested address"
+2025-06-03T10:37:02.599+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] /home/etsme/node0 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T10:37:02.600+0800 [INFO]  raft-node: new store created : EXTRA_VALUE_AT_END="&{false {0 0} map[] 0 0}"
+2025-06-03T10:37:02.606+0800 [ERROR] raft-node: failed to open store: %s: EXTRA_VALUE_AT_END="file snapshot RaftNode: permissions test failed: open /home/etsme/node0/snapshots/permTest: permission denied"
+2025-06-03T10:37:51.341+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T10:37:51.342+0800 [INFO]  raft-node: new store created : EXTRA_VALUE_AT_END="&{false {0 0} map[] 0 0}"
+2025-06-03T10:37:51.348+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T10:37:51.363+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T10:37:51.364+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001fa2c0 0xc000212960 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T10:37:51.364+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T10:37:51.364+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc00019ae60 <nil> <nil> 0xc000213080 <nil> [0x6d83c0] false}"
+2025-06-03T10:37:51.364+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T10:37:53.184+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T10:37:53.195+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T10:44:07.836+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T10:44:07.836+0800 [INFO]  raft-node.service: node at raft : state=Leader
+2025-06-03T10:44:07.837+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T10:44:07.843+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T10:45:09.994+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T10:48:26.075+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T10:48:26.077+0800 [INFO]  raft-node: new store created : EXTRA_VALUE_AT_END="&{false {0 0} map[] 0 0}"
+2025-06-03T10:48:26.083+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T10:48:26.096+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T10:48:26.101+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001fa2c0 0xc000212960 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T10:48:26.102+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T10:48:26.102+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc0000ae000 <nil> <nil> 0xc0000240c0 <nil> [0x6d83c0] false}"
+2025-06-03T10:48:26.102+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T10:48:27.998+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T10:48:28.008+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T10:48:28.011+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T10:48:28.011+0800 [INFO]  raft-node.RaftFsm: RaftFsm Apply: index=3
+  time=
+  | {"op":"set","key":"foo","value":"bar"}-1748918908011-当前时间：2025-06-03 10:48:28.011
+   value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T10:48:28.012+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo
+  value=
+  | bar-1748918908012-当前时间：2025-06-03 10:48:28.012
+  
+2025-06-03T10:50:41.928+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T10:50:41.928+0800 [INFO]  raft-node.service: node at raft : state=Leader
+2025-06-03T10:50:41.928+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T10:50:41.928+0800 [INFO]  raft-node.service: set key: key=test1
+  time=
+  | 当前时间：2025-06-03 10:50:41.928
+   milliseconds=1748919041928
+2025-06-03T10:50:41.934+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T10:50:41.934+0800 [INFO]  raft-node.RaftFsm: RaftFsm Apply: index=5
+  time=
+  | {"op":"set","key":"test1","value":"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n"}-1748919041934-当前时间：2025-06-03 10:50:41.934
+   value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T10:50:41.934+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  | -1748919041934-当前时间：2025-06-03 10:50:41.934
+  
+2025-06-03T11:15:33.818+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:17:30.161+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:17:30.163+0800 [INFO]  raft-node: new store created : EXTRA_VALUE_AT_END="&{false {0 0} map[] 0 0}"
+2025-06-03T11:17:30.168+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:17:30.181+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:17:30.183+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001fa2c0 0xc0001c3700 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:17:30.183+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:17:30.183+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc0000ae000 <nil> <nil> 0xc0000240c0 <nil> [0x6d83c0] false}"
+2025-06-03T11:17:30.183+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:17:31.312+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:17:31.319+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:17:31.321+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:17:31.322+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 time="node:  {\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}-1748920651322039648-FSM Apply 时间：2025-06-03 11:17:31.322" value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:17:31.322+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:17:31.322+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:17:31.322+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 time="node:  {\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}-1748920651322673171-FSM Apply 时间：2025-06-03 11:17:31.322" value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:17:31.322+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:20:26.180+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:20:26.180+0800 [INFO]  raft-node.service: node at raft : state=Leader
+2025-06-03T11:20:26.180+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:20:26.181+0800 [INFO]  raft-node.service: HTTP set key: key=test1 time="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:20:26.186+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:20:26.187+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 time="node:  {\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}-1748920826187085751-FSM Apply 时间：2025-06-03 11:20:26.187" value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:20:26.187+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:28:45.658+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:28:46.527+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:28:46.528+0800 [INFO]  raft-node: new store created : EXTRA_VALUE_AT_END="&{false {0 0} map[] 0 0}"
+2025-06-03T11:28:46.536+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:28:46.546+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:28:46.549+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001822c0 0xc000149700 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:28:46.549+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:28:46.549+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc0000ae000 <nil> <nil> 0xc0000240c0 <nil> [0x6d83c0] false}"
+2025-06-03T11:28:46.549+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:28:48.431+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:28:48.442+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:28:48.447+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:28:48.447+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 time="node:  {\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}-1748921328447186475-FSM Apply 时间：2025-06-03 11:28:48.447" value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:28:48.447+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:28:48.447+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:28:48.447+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 time="node:  {\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}-1748921328447885776-FSM Apply 时间：2025-06-03 11:28:48.447" value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:28:48.448+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:28:48.449+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:28:48.449+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 time="node:  {\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}-1748921328449348598-FSM Apply 时间：2025-06-03 11:28:48.449" value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:28:48.449+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:34:51.292+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:34:57.914+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:34:57.915+0800 [INFO]  raft-node: new store created : rftstore="&{false {0 0} map[] 0 0}"
+2025-06-03T11:34:57.920+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:34:57.934+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:34:57.934+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001822c0 0xc000149700 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:34:57.934+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:34:57.934+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc000120f00 <nil> <nil> 0xc00019b6e0 <nil> [0x6d83c0] false}"
+2025-06-03T11:34:57.935+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:34:59.657+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:34:59.668+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:34:59.672+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:34:59.672+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: Apply_node %!s(int64=1748921699672524354)-%!d(string=FSM Applied 时间：2025-06-03 11:34:59.672)-%!s(MISSING)"
+2025-06-03T11:34:59.672+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:34:59.673+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:34:59.673+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: Apply_node %!s(int64=1748921699673215229)-%!d(string=FSM Applied 时间：2025-06-03 11:34:59.673)-%!s(MISSING)"
+2025-06-03T11:34:59.673+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:34:59.673+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:34:59.673+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: Apply_node %!s(int64=1748921699673897416)-%!d(string=FSM Applied 时间：2025-06-03 11:34:59.673)-%!s(MISSING)"
+2025-06-03T11:34:59.674+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:38:14.450+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:38:15.520+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:38:15.522+0800 [INFO]  raft-node: new store created : rftstore="&{false {0 0} map[] 0 0}"
+2025-06-03T11:38:15.527+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:38:15.541+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:38:15.543+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0000f42c0 0xc000093740 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:38:15.543+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:38:15.543+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc000138000 <nil> <nil> 0xc00012a090 <nil> [0x6d83c0] false}"
+2025-06-03T11:38:15.543+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:38:16.707+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:38:16.718+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:38:16.721+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:38:16.721+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: Apply_node %!s(int64=1748921896721738908)-%!d(string=FSM Applied 时间：2025-06-03 11:38:16.721)-%!s(MISSING)"
+2025-06-03T11:38:16.721+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:38:16.722+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:38:16.722+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: Apply_node %!s(int64=1748921896722300134)-%!d(string=FSM Applied 时间：2025-06-03 11:38:16.722)-%!s(MISSING)"
+2025-06-03T11:38:16.722+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:38:16.722+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:38:16.722+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: Apply_node %!s(int64=1748921896722844747)-%!d(string=FSM Applied 时间：2025-06-03 11:38:16.722)-%!s(MISSING)"
+2025-06-03T11:38:16.723+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:38:20.208+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:38:23.608+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:38:23.610+0800 [INFO]  raft-node: new store created : rftstore="&{false {0 0} map[] 0 0}"
+2025-06-03T11:38:23.615+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:38:23.628+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:38:23.631+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0000f42c0 0xc000093740 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:38:23.631+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:38:23.631+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc000138000 <nil> <nil> 0xc00012a090 <nil> [0x6d83c0] false}"
+2025-06-03T11:38:23.631+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:38:25.280+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:38:25.287+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:38:25.290+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:38:25.290+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: Apply_node  1748921905290808083-FSM Applied 时间：2025-06-03 11:38:25.290"
+2025-06-03T11:38:25.291+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:38:25.291+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:38:25.291+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: Apply_node  1748921905291422469-FSM Applied 时间：2025-06-03 11:38:25.291"
+2025-06-03T11:38:25.291+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:38:25.291+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:38:25.291+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: Apply_node  1748921905291984940-FSM Applied 时间：2025-06-03 11:38:25.291"
+2025-06-03T11:38:25.292+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:43:30.552+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:43:56.988+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:43:56.989+0800 [INFO]  raft-node: new store created : rftstore="&{false {0 0} map[] 0 0}"
+2025-06-03T11:43:56.995+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:43:57.012+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:43:57.017+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001822c0 0xc000149700 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:43:57.017+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:43:57.017+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc0000ae000 <nil> <nil> 0xc0000240c0 <nil> [0x6d83c0] false}"
+2025-06-03T11:43:57.018+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:43:58.729+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:43:58.742+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:43:58.745+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:43:58.745+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: ApplyNode -FSM Applied 时间：2025-06-03 11:43:58.745"
+2025-06-03T11:43:58.746+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:43:58.746+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:43:58.746+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: ApplyNode -FSM Applied 时间：2025-06-03 11:43:58.746"
+2025-06-03T11:43:58.746+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:43:58.746+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:43:58.746+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: ApplyNode -FSM Applied 时间：2025-06-03 11:43:58.746"
+2025-06-03T11:43:58.746+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:44:38.482+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:44:38.482+0800 [INFO]  raft-node.service: node at raft : state=Leader
+2025-06-03T11:44:38.482+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:44:38.483+0800 [INFO]  raft-node.service: HTTP set key: key=test1 time="value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483"
+2025-06-03T11:44:38.489+0800 [DEBUG] raft-node.RaftFsm: Received log: index=13 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}"
+2025-06-03T11:44:38.489+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=13 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}: ApplyNode -FSM Applied 时间：2025-06-03 11:44:38.489"
+2025-06-03T11:44:38.490+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483"
+2025-06-03T11:45:23.646+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:48:13.390+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:48:13.392+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-03T11:48:13.396+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:48:13.406+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:48:13.408+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001fa2c0 0xc0001c3700 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:48:13.409+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:48:13.409+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc000140000 <nil> <nil> 0xc000132090 <nil> [0x6d83c0] false}"
+2025-06-03T11:48:13.409+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:48:15.252+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:48:15.262+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:48:15.266+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:48:15.266+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:48:15.266"
+2025-06-03T11:48:15.267+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:48:15.267+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:48:15.267+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:48:15.267"
+2025-06-03T11:48:15.267+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:48:15.267+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:48:15.267+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:48:15.267"
+2025-06-03T11:48:15.267+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:48:15.268+0800 [DEBUG] raft-node.RaftFsm: Received log: index=13 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}"
+2025-06-03T11:48:15.268+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=13 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:48:15.268"
+2025-06-03T11:48:15.268+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483"
+2025-06-03T11:48:28.304+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:48:28.307+0800 [INFO]  raft-node.service: node at raft : state=Leader
+2025-06-03T11:48:28.307+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:48:28.307+0800 [INFO]  raft-node.service: HTTP set key: key=test1 time="value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307"
+2025-06-03T11:48:28.314+0800 [DEBUG] raft-node.RaftFsm: Received log: index=15 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}"
+2025-06-03T11:48:28.314+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=15 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:48:28.314"
+2025-06-03T11:48:28.314+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307"
+2025-06-03T11:49:06.068+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:51:24.833+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:51:24.835+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-03T11:51:24.840+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:51:24.853+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:51:24.855+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0000f42c0 0xc000093740 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:51:24.856+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:51:24.856+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc000138000 <nil> <nil> 0xc00012a090 <nil> [0x6d83c0] false}"
+2025-06-03T11:51:24.856+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:51:26.022+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:51:26.032+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:51:26.036+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:51:26.036+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:51:26.036"
+2025-06-03T11:51:26.036+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:51:26.036+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:51:26.037+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:51:26.037"
+2025-06-03T11:51:26.037+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:51:26.037+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:51:26.037+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:51:26.037"
+2025-06-03T11:51:26.037+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:51:26.037+0800 [DEBUG] raft-node.RaftFsm: Received log: index=13 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}"
+2025-06-03T11:51:26.038+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=13 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:51:26.038"
+2025-06-03T11:51:26.038+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483"
+2025-06-03T11:51:26.038+0800 [DEBUG] raft-node.RaftFsm: Received log: index=15 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}"
+2025-06-03T11:51:26.038+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=15 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:51:26.038"
+2025-06-03T11:51:26.038+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307"
+2025-06-03T11:51:35.875+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:51:35.875+0800 [INFO]  raft-node.service: node at raft : state=Leader
+2025-06-03T11:51:35.875+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:51:35.875+0800 [INFO]  raft-node.service: HTTP set key: key=test1 time="value:123 APISetNode:node0-2025-06-03 11:51:35.875"
+2025-06-03T11:51:35.882+0800 [DEBUG] raft-node.RaftFsm: Received log: index=17 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}"
+2025-06-03T11:51:35.882+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=17 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:51:35.882"
+2025-06-03T11:51:35.882+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:51:35.875"
+2025-06-03T11:54:14.578+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:54:15.914+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:54:15.916+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-03T11:54:15.921+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:54:15.934+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:54:15.934+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001822c0 0xc000149700 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:54:15.935+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:54:15.935+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc000120fa0 <nil> <nil> 0xc00019bb90 <nil> [0x6d83c0] false}"
+2025-06-03T11:54:15.935+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:54:17.934+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:54:17.945+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:54:17.948+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:54:17.949+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:54:17.949"
+2025-06-03T11:54:17.949+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:54:17.949+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:54:17.949+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:54:17.949"
+2025-06-03T11:54:17.949+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:54:17.949+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:54:17.949+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:54:17.949"
+2025-06-03T11:54:17.950+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:54:17.950+0800 [DEBUG] raft-node.RaftFsm: Received log: index=13 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}"
+2025-06-03T11:54:17.950+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=13 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:54:17.950"
+2025-06-03T11:54:17.950+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483"
+2025-06-03T11:54:17.950+0800 [DEBUG] raft-node.RaftFsm: Received log: index=15 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}"
+2025-06-03T11:54:17.950+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=15 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:54:17.950"
+2025-06-03T11:54:17.950+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307"
+2025-06-03T11:54:17.951+0800 [DEBUG] raft-node.RaftFsm: Received log: index=17 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}"
+2025-06-03T11:54:17.951+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=17 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:54:17.951"
+2025-06-03T11:54:17.951+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:51:35.875"
+2025-06-03T11:54:22.274+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:54:22.274+0800 [INFO]  raft-node.service: node at raft : state=Leader
+2025-06-03T11:54:22.274+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:54:22.274+0800 [INFO]  raft-node.service: HTTP set key: key=test1 time="value:123 APISetNode:node0-2025-06-03 11:54:22.274"
+2025-06-03T11:54:22.281+0800 [DEBUG] raft-node.RaftFsm: Received log: index=19 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}"
+2025-06-03T11:54:22.281+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=19 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:54:22.281"
+2025-06-03T11:54:22.281+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:54:22.274"
+2025-06-03T11:55:37.502+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:55:38.423+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:55:38.425+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-03T11:55:38.433+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:55:38.442+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:55:38.444+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001fa2c0 0xc0001c3700 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:55:38.444+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:55:38.444+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc0000ae000 <nil> <nil> 0xc0000240c0 <nil> [0x6d83c0] false}"
+2025-06-03T11:55:38.444+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:55:39.203+0800 [INFO]  raft-node: hraftd exiting
+2025-06-03T11:55:43.151+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-03T11:55:43.153+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-03T11:55:43.158+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-03T11:55:43.170+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-03T11:55:43.172+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0000f42c0 0xc000093740 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 1500 500 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-03T11:55:43.172+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-03T11:55:43.172+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc000138000 <nil> <nil> 0xc00012a090 <nil> [0x6d83c0] false}"
+2025-06-03T11:55:43.173+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-03T11:55:44.735+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-03T11:55:44.746+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-03T11:55:44.749+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-03T11:55:44.749+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:55:44.749"
+2025-06-03T11:55:44.749+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-03T11:55:44.749+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-03T11:55:44.749+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:55:44.749"
+2025-06-03T11:55:44.749+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-03T11:55:44.749+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-03T11:55:44.750+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:55:44.750"
+2025-06-03T11:55:44.750+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-03T11:55:44.750+0800 [DEBUG] raft-node.RaftFsm: Received log: index=13 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}"
+2025-06-03T11:55:44.750+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=13 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:55:44.750"
+2025-06-03T11:55:44.750+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483"
+2025-06-03T11:55:44.750+0800 [DEBUG] raft-node.RaftFsm: Received log: index=15 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}"
+2025-06-03T11:55:44.750+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=15 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:55:44.750"
+2025-06-03T11:55:44.751+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307"
+2025-06-03T11:55:44.751+0800 [DEBUG] raft-node.RaftFsm: Received log: index=17 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}"
+2025-06-03T11:55:44.751+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=17 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:55:44.751"
+2025-06-03T11:55:44.751+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:51:35.875"
+2025-06-03T11:55:44.751+0800 [DEBUG] raft-node.RaftFsm: Received log: index=19 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}"
+2025-06-03T11:55:44.751+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=19 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:55:44.751"
+2025-06-03T11:55:44.751+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:54:22.274"
+2025-06-03T11:55:56.050+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:55:56.050+0800 [INFO]  raft-node.service: node at raft : state=Leader
+2025-06-03T11:55:56.050+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Leader]"
+2025-06-03T11:55:56.050+0800 [INFO]  raft-node.service: HTTP set key: key=test1 time="value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050"
+2025-06-03T11:55:56.057+0800 [DEBUG] raft-node.RaftFsm: Received log: index=21 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050\"}"
+2025-06-03T11:55:56.057+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=21 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050\"}: ApplyNode node0-FSM Applied 时间：2025-06-03 11:55:56.057"
+2025-06-03T11:55:56.057+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050"
+2025-06-03T11:56:38.006+0800 [INFO]  raft-node: hraftd exiting
+2025-06-04T09:57:25.149+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 30000 15000 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-04T09:57:25.150+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-04T09:57:25.156+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-04T09:57:25.160+0800 [INFO]  raft-node.RaftNode: init raft with config: config="&{3 1s 1s 50ms 64 false true 10240 2m0s 8192 500ms node0 <nil> <nil> DEBUG <nil> false false false}"
+2025-06-04T09:57:25.166+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-04T09:57:25.169+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0001822c0 0xc000149700 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 30000 15000 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-04T09:57:25.169+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-04T09:57:25.169+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc0000ae000 <nil> <nil> 0xc0000240c0 <nil> [0x6d83c0] false}"
+2025-06-04T09:57:25.169+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-04T09:57:26.521+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-04T09:57:26.533+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-04T09:57:26.535+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-04T09:57:26.536+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 09:57:26.536"
+2025-06-04T09:57:26.536+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-04T09:57:26.536+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-04T09:57:26.536+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 09:57:26.536"
+2025-06-04T09:57:26.536+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-04T09:57:26.536+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-04T09:57:26.537+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 09:57:26.537"
+2025-06-04T09:57:26.537+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-04T09:57:26.537+0800 [DEBUG] raft-node.RaftFsm: Received log: index=13 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}"
+2025-06-04T09:57:26.537+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=13 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 09:57:26.537"
+2025-06-04T09:57:26.537+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483"
+2025-06-04T09:57:26.538+0800 [DEBUG] raft-node.RaftFsm: Received log: index=15 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}"
+2025-06-04T09:57:26.538+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=15 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 09:57:26.538"
+2025-06-04T09:57:26.538+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307"
+2025-06-04T09:57:26.538+0800 [DEBUG] raft-node.RaftFsm: Received log: index=17 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}"
+2025-06-04T09:57:26.538+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=17 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 09:57:26.538"
+2025-06-04T09:57:26.538+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:51:35.875"
+2025-06-04T09:57:26.538+0800 [DEBUG] raft-node.RaftFsm: Received log: index=19 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}"
+2025-06-04T09:57:26.539+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=19 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 09:57:26.539"
+2025-06-04T09:57:26.539+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:54:22.274"
+2025-06-04T09:57:26.539+0800 [DEBUG] raft-node.RaftFsm: Received log: index=21 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050\"}"
+2025-06-04T09:57:26.539+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=21 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 09:57:26.539"
+2025-06-04T09:57:26.539+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050"
+2025-06-04T09:59:36.385+0800 [INFO]  raft-node: hraftd exiting
+2025-06-04T10:03:23.563+0800 [INFO]  raft-node: Raft configuration loaded  %+v: EXTRA_VALUE_AT_END="&{etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 30000 15000 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}"
+2025-06-04T10:03:23.564+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-04T10:03:23.569+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-04T10:03:23.573+0800 [INFO]  raft-node.RaftNode: init raft with config: config="&{ProtocolVersion:3 HeartbeatTimeout:1s ElectionTimeout:1s CommitTimeout:50ms MaxAppendEntries:64 BatchApplyCh:false ShutdownOnRemove:true TrailingLogs:10240 SnapshotInterval:2m0s SnapshotThreshold:8192 LeaderLeaseTimeout:500ms LocalID:node0 NotifyCh:<nil> LogOutput:<nil> LogLevel:DEBUG Logger:<nil> NoSnapshotRestoreOnStart:false PreVoteDisabled:false skipStartup:false}"
+2025-06-04T10:03:23.579+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-04T10:03:23.581+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0000f42c0 0xc000093740 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 30000 15000 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-04T10:03:23.581+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-04T10:03:23.581+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc000138000 <nil> <nil> 0xc00012a090 <nil> [0x6d83c0] false}"
+2025-06-04T10:03:23.582+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-04T10:03:25.352+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-04T10:03:25.360+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-04T10:03:25.364+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-04T10:03:25.364+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:03:25.364"
+2025-06-04T10:03:25.364+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-04T10:03:25.365+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-04T10:03:25.365+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:03:25.365"
+2025-06-04T10:03:25.365+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-04T10:03:25.365+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-04T10:03:25.365+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:03:25.365"
+2025-06-04T10:03:25.366+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-04T10:03:25.366+0800 [DEBUG] raft-node.RaftFsm: Received log: index=13 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}"
+2025-06-04T10:03:25.366+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=13 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:03:25.366"
+2025-06-04T10:03:25.366+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483"
+2025-06-04T10:03:25.366+0800 [DEBUG] raft-node.RaftFsm: Received log: index=15 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}"
+2025-06-04T10:03:25.366+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=15 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:03:25.366"
+2025-06-04T10:03:25.367+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307"
+2025-06-04T10:03:25.367+0800 [DEBUG] raft-node.RaftFsm: Received log: index=17 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}"
+2025-06-04T10:03:25.367+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=17 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:03:25.367"
+2025-06-04T10:03:25.367+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:51:35.875"
+2025-06-04T10:03:25.367+0800 [DEBUG] raft-node.RaftFsm: Received log: index=19 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}"
+2025-06-04T10:03:25.367+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=19 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:03:25.367"
+2025-06-04T10:03:25.367+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:54:22.274"
+2025-06-04T10:03:25.368+0800 [DEBUG] raft-node.RaftFsm: Received log: index=21 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050\"}"
+2025-06-04T10:03:25.368+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=21 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:03:25.368"
+2025-06-04T10:03:25.368+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050"
+2025-06-04T10:12:39.802+0800 [INFO]  raft-node: hraftd exiting
+2025-06-04T10:12:44.370+0800 [INFO]  raft-node: Raft configuration loaded:: EXTRA_VALUE_AT_END="&{ClusterName:etsme-raft-cluster Nodes:[{ID:node0 Address:127.0.0.1:10085 RaftBind:127.0.0.1:10086}] RaftDir:./ ElectionTimeoutMs:30000 HeartbeatIntervalMs:15000 Snapshot:{Enabled:true SnapshotIntervalSec:30 SnapshotThreshold:1000 RetainSnapshots:3} Log:{LogDir:/var/raft/logs TrailingLogs:10240} Transport:{Type:tcp MaxPool:3 TimeoutSec:5} BootstrapExpect:3 SingleNode:true Server:{Address:}}"
+2025-06-04T10:12:44.372+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-04T10:12:44.377+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-04T10:12:44.383+0800 [INFO]  raft-node.RaftNode: init raft with config: config="&{ProtocolVersion:3 HeartbeatTimeout:15ms ElectionTimeout:30ms CommitTimeout:50ms MaxAppendEntries:64 BatchApplyCh:false ShutdownOnRemove:true TrailingLogs:10240 SnapshotInterval:2m0s SnapshotThreshold:8192 LeaderLeaseTimeout:500ms LocalID:node0 NotifyCh:<nil> LogOutput:<nil> LogLevel:DEBUG Logger:<nil> NoSnapshotRestoreOnStart:false PreVoteDisabled:false skipStartup:false}"
+2025-06-04T10:12:44.383+0800 [ERROR] raft-node: failed to open store: %s: EXTRA_VALUE_AT_END="new raft: LeaderLeaseTimeout (500ms) cannot be larger than heartbeat timeout (15ms)"
+2025-06-04T10:15:28.766+0800 [INFO]  raft-node: Raft configuration loaded:: EXTRA_VALUE_AT_END="&{ClusterName:etsme-raft-cluster Nodes:[{ID:node0 Address:127.0.0.1:10085 RaftBind:127.0.0.1:10086}] RaftDir:./ ElectionTimeoutMs:30000 HeartbeatIntervalMs:15000 Snapshot:{Enabled:true SnapshotIntervalSec:30 SnapshotThreshold:1000 RetainSnapshots:3} Log:{LogDir:/var/raft/logs TrailingLogs:10240} Transport:{Type:tcp MaxPool:3 TimeoutSec:5} BootstrapExpect:3 SingleNode:true Server:{Address:}}"
+2025-06-04T10:15:28.770+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-04T10:15:28.779+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-04T10:15:28.786+0800 [INFO]  raft-node.RaftNode: init raft with config: config="&{ProtocolVersion:3 HeartbeatTimeout:15s ElectionTimeout:30ms CommitTimeout:50ms MaxAppendEntries:64 BatchApplyCh:false ShutdownOnRemove:true TrailingLogs:10240 SnapshotInterval:2m0s SnapshotThreshold:8192 LeaderLeaseTimeout:500ms LocalID:node0 NotifyCh:<nil> LogOutput:<nil> LogLevel:DEBUG Logger:<nil> NoSnapshotRestoreOnStart:false PreVoteDisabled:false skipStartup:false}"
+2025-06-04T10:15:28.786+0800 [ERROR] raft-node: failed to open store: %s: EXTRA_VALUE_AT_END="new raft: ElectionTimeout (30ms) must be equal or greater than Heartbeat Timeout (15s)"
+2025-06-04T10:17:05.590+0800 [INFO]  raft-node: Raft configuration loaded:: EXTRA_VALUE_AT_END="&{ClusterName:etsme-raft-cluster Nodes:[{ID:node0 Address:127.0.0.1:10085 RaftBind:127.0.0.1:10086}] RaftDir:./ ElectionTimeoutMs:30000 HeartbeatIntervalMs:15000 Snapshot:{Enabled:true SnapshotIntervalSec:30 SnapshotThreshold:1000 RetainSnapshots:3} Log:{LogDir:/var/raft/logs TrailingLogs:10240} Transport:{Type:tcp MaxPool:3 TimeoutSec:5} BootstrapExpect:3 SingleNode:true Server:{Address:}}"
+2025-06-04T10:17:05.591+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-04T10:17:05.596+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-04T10:17:05.600+0800 [INFO]  raft-node.RaftNode: init raft with config: config="&{ProtocolVersion:3 HeartbeatTimeout:15s ElectionTimeout:30ms CommitTimeout:50ms MaxAppendEntries:64 BatchApplyCh:false ShutdownOnRemove:true TrailingLogs:10240 SnapshotInterval:2m0s SnapshotThreshold:8192 LeaderLeaseTimeout:500ms LocalID:node0 NotifyCh:<nil> LogOutput:<nil> LogLevel:DEBUG Logger:<nil> NoSnapshotRestoreOnStart:false PreVoteDisabled:false skipStartup:false}"
+2025-06-04T10:17:05.600+0800 [ERROR] raft-node: failed to open store: %s: EXTRA_VALUE_AT_END="new raft: ElectionTimeout (30ms) must be equal or greater than Heartbeat Timeout (15s)"
+2025-06-04T10:17:09.772+0800 [INFO]  raft-node: Raft configuration loaded:: EXTRA_VALUE_AT_END="&{ClusterName:etsme-raft-cluster Nodes:[{ID:node0 Address:127.0.0.1:10085 RaftBind:127.0.0.1:10086}] RaftDir:./ ElectionTimeoutMs:30000 HeartbeatIntervalMs:15000 Snapshot:{Enabled:true SnapshotIntervalSec:30 SnapshotThreshold:1000 RetainSnapshots:3} Log:{LogDir:/var/raft/logs TrailingLogs:10240} Transport:{Type:tcp MaxPool:3 TimeoutSec:5} BootstrapExpect:3 SingleNode:true Server:{Address:}}"
+2025-06-04T10:17:09.774+0800 [INFO]  raft-node: new store created : rftstore=node0
+2025-06-04T10:17:09.778+0800 [INFO]  raft-node.RaftNode: create RaftNode with RaftDir: %s: EXTRA_VALUE_AT_END=./
+2025-06-04T10:17:09.783+0800 [INFO]  raft-node.RaftNode: init raft with config: config="&{ProtocolVersion:3 HeartbeatTimeout:15s ElectionTimeout:30s CommitTimeout:50ms MaxAppendEntries:64 BatchApplyCh:false ShutdownOnRemove:true TrailingLogs:10240 SnapshotInterval:2m0s SnapshotThreshold:8192 LeaderLeaseTimeout:500ms LocalID:node0 NotifyCh:<nil> LogOutput:<nil> LogLevel:DEBUG Logger:<nil> NoSnapshotRestoreOnStart:false PreVoteDisabled:false skipStartup:false}"
+2025-06-04T10:17:09.790+0800 [INFO]  raft-node.RaftNode: raft enter bootstrap configuration:: config="{[{Voter node0 127.0.0.1:10086}]}"
+2025-06-04T10:17:09.792+0800 [INFO]  raft-node.service: raft: object="&{./ 127.0.0.1:10086 false {0 0} 0xc0000f42c0 0xc000093740 {etsme-raft-cluster [{node0 127.0.0.1:10085 127.0.0.1:10086}] ./ 30000 15000 {true 30 1000 3} {/var/raft/logs 10240} {tcp 3 5} 3 true {}}}"
+2025-06-04T10:17:09.792+0800 [INFO]  raft-node.RaftNode: raftnode Raft: object="Node at 127.0.0.1:10086 [Follower]"
+2025-06-04T10:17:09.792+0800 [INFO]  raft-node.service: starting HTTP server at : router="&{0x6d91e0 0xc000138000 <nil> <nil> 0xc00012a090 <nil> [0x6d83c0] false}"
+2025-06-04T10:17:09.792+0800 [INFO]  raft-node: hraftd started successfully, listening on http://%s: EXTRA_VALUE_AT_END=127.0.0.1:10085
+2025-06-04T10:17:32.284+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Candidate] Candidate}"
+2025-06-04T10:17:32.296+0800 [INFO]  raft-node.service: raft state changed to: state="{Node at 127.0.0.1:10086 [Leader] Leader}"
+2025-06-04T10:17:32.299+0800 [DEBUG] raft-node.RaftFsm: Received log: index=3 data="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}"
+2025-06-04T10:17:32.299+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=3 value="{\"op\":\"set\",\"key\":\"foo\",\"value\":\"bar\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:17:32.299"
+2025-06-04T10:17:32.300+0800 [INFO]  raft-node: RaftFsm Apply set: key=foo value=bar
+2025-06-04T10:17:32.300+0800 [DEBUG] raft-node.RaftFsm: Received log: index=5 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}"
+2025-06-04T10:17:32.300+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=5 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"index-1-1748919041928-当前时间：2025-06-03 10:50:41.928\n\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:17:32.300"
+2025-06-04T10:17:32.300+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1
+  value=
+  | index-1-1748919041928-当前时间：2025-06-03 10:50:41.928
+  
+2025-06-04T10:17:32.301+0800 [DEBUG] raft-node.RaftFsm: Received log: index=7 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}"
+2025-06-04T10:17:32.301+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=7 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:17:32.301"
+2025-06-04T10:17:32.301+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="node:node0  index-1-1748920826181062380-set 时间：2025-06-03 11:20:26.181"
+2025-06-04T10:17:32.301+0800 [DEBUG] raft-node.RaftFsm: Received log: index=13 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}"
+2025-06-04T10:17:32.301+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=13 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:17:32.301"
+2025-06-04T10:17:32.302+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:44:38.483"
+2025-06-04T10:17:32.302+0800 [DEBUG] raft-node.RaftFsm: Received log: index=15 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}"
+2025-06-04T10:17:32.302+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=15 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:17:32.302"
+2025-06-04T10:17:32.302+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:index-1 node:node0-API set时间：2025-06-03 11:48:28.307"
+2025-06-04T10:17:32.302+0800 [DEBUG] raft-node.RaftFsm: Received log: index=17 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}"
+2025-06-04T10:17:32.302+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=17 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:51:35.875\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:17:32.302"
+2025-06-04T10:17:32.303+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:51:35.875"
+2025-06-04T10:17:32.303+0800 [DEBUG] raft-node.RaftFsm: Received log: index=19 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}"
+2025-06-04T10:17:32.303+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=19 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode:node0-2025-06-03 11:54:22.274\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:17:32.303"
+2025-06-04T10:17:32.303+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode:node0-2025-06-03 11:54:22.274"
+2025-06-04T10:17:32.303+0800 [DEBUG] raft-node.RaftFsm: Received log: index=21 data="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050\"}"
+2025-06-04T10:17:32.303+0800 [INFO]  raft-node.RaftFsm: RaftFsm Applying: index=21 value="{\"op\":\"set\",\"key\":\"test1\",\"value\":\"value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050\"}: ApplyNode node0-FSM Applied 时间：2025-06-04 10:17:32.303"
+2025-06-04T10:17:32.304+0800 [INFO]  raft-node: RaftFsm Apply set: key=test1 value="value:123 APISetNode node0-APISet 时间2025-06-03 11:55:56.050"
+2025-06-04T10:18:09.268+0800 [INFO]  raft-node: hraftd exiting

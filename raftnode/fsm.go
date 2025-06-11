@@ -2,6 +2,8 @@ package raftnode
 import (
 	"io"
 	"sync"
+	"time"
+	"fmt"
 	"github.com/hashicorp/raft"
 	"github.com/ifoxhz/raft-nginx/helper"
 	"github.com/ifoxhz/raft-nginx/store"
@@ -15,6 +17,7 @@ type RaftFsm struct {
 	mu    sync.RWMutex
 	store *store.Store
 	log  helper.Log
+	RaftNodeId string 
 }
 
 func NewRaftFsm(s *store.Store) *RaftFsm {
@@ -33,6 +36,11 @@ func (rf *RaftFsm) Apply(l *raft.Log) interface{} {
 
 	// This produces A LOT of logs
 	rf.log.Debug("Received log", "index", l.Index, "data", string(l.Data))
+	now := time.Now()
+	// milliseconds := now.UnixNano() 
+	tstr := fmt.Sprintf("FSM Applied 时间：%s", now.Format("2006-01-02 15:04:05.000"))
+	value := fmt.Sprintf("%s: ApplyNode %s-%s",string(l.Data), rf.RaftNodeId, tstr)
+	rf.log.Info("RaftFsm Applying", "index", l.Index, "value", value)
 	return rf.store.FsmApply(l)
 }
 

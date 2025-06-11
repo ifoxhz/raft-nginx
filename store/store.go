@@ -4,8 +4,10 @@ import (
 	"fmt"
 	"io"
 	"encoding/json"
+	// "time"
 	"github.com/hashicorp/raft"
 	"github.com/ifoxhz/raft-nginx/helper"
+	// "github.com/syndtr/goleveldb/leveldb"
 )
 
 type Store struct {
@@ -47,6 +49,9 @@ func (st *Store) FsmApply(l *raft.Log) interface{} {
 	if err := json.Unmarshal(l.Data, &c); err != nil {
 		(fmt.Sprintf("failed to unmarshal command: %s", err.Error()))
 	}
+
+
+	helper.Logger.Info("RaftFsm Apply set", "key", c.Key, "value", c.Value)
 
 	st.index = l.Index
 	st.term = l.Term

@@ -2,7 +2,7 @@
 
 # 定义进程路径（根据实际路径调整）
 OPENRESTY_BIN="/usr/local/openresty/bin/openresty"
-SERVICE_BIN="//usr/local/bin/hraftd"  # 第二个进程的路径
+SERVICE_BIN="//usr/local/bin/raft-nginx"  # 第二个进程的路径
 
 # 进程启动函数
 start_process() {
